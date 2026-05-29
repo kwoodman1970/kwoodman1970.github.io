@@ -1,0 +1,78 @@
+A.MenuItem
+{
+  display:  block;
+  margin:  4px 0px 4px 0px;
+  border:  4px solid black;
+  width:  188px;
+  height:  auto;
+  background-color:  #CC9900;
+  color:  black;
+  text-align:  center;
+  font-size:  150%;
+}
+
+A.MenuItem:hover
+{
+  background-color:  #FFCC00;
+  color:  black;
+}
+
+BODY
+{
+  margin:  0px;
+  border:  0px;
+  padding:  0px;
+}
+
+DIV#Menu
+{
+  display:  none;
+}
+
+@media screen
+{
+  DIV#Menu
+  {
+    display:  block;
+    position:  fixed;
+    margin:  0px;
+    border:  0px;
+    padding:  2px;
+    top:  0px;
+    right: auto;
+    bottom:  0px;
+    left:  0px;
+    width:  220px;
+    height:  auto;
+    overflow:  auto;
+    background-color:  transparent;
+  }
+}
+
+@media screen
+{
+  DIV#Contents
+  {
+    margin:  0px 0px 0px 224px;
+    border:  0px;
+    padding: 2px;
+  }
+}
+
+DIV.MenuItem
+{
+  margin:  4px 0px 4px 0px;
+  border:  4px solid black;
+  width:  188px;
+  height:  auto;
+  background-color:  #CC9900;
+  color:  black;
+  text-align:  center;
+  font-size:  150%;
+}
+
+DIV#Menu UL
+{
+  padding-left:  20px;
+  width:  180px;
+}

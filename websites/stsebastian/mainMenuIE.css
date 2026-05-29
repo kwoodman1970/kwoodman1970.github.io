@@ -1,0 +1,42 @@
+A.MenuItem
+{
+  background-color:  #CC9900;
+}
+
+A.MenuItem:visited
+{
+  color:  black;
+}
+
+A.MenuItem:hover
+{
+  background-color:  #FFCC00;
+}
+
+@media screen
+{
+  BODY
+  {
+    width:  100%;
+    height:  100%;
+    overflow:  auto;
+  }
+}
+
+DIV#Menu
+{
+  position:  absolute;
+  height:  100%;
+  padding-top:  0px;
+  padding-bottom:  0px;
+}
+
+HTML
+{
+  overflow:  hidden;
+}
+
+DIV#Menu UL
+{
+  margin-left:  0px;
+}

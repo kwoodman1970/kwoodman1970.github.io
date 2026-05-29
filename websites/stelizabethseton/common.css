@@ -1,0 +1,98 @@
+.Blink
+{
+  text-decoration:  blink;
+}
+
+.NoWrap
+{
+  white-space:  nowrap;
+}
+
+.Underline
+{
+  text-decoration:  underline;
+}
+
+.Address
+{
+  margin-bottom:  1em;
+  white-space:  nowrap;
+}
+
+A:link
+{
+  color:  blue;
+}
+
+A:visited
+{
+  color:  blue;
+}
+
+
+@media screen
+{
+  A:link
+  {
+    color:  lime;
+  }
+
+  A:visited
+  {
+    color:  yellow;
+  }
+}
+
+BODY
+{
+  border:  0px;
+  padding:  4px;
+  background-color:  white;
+  color:  black;
+}
+
+@media screen
+{
+  BODY
+  {
+    font-family:  "Arial", "Helvetica", "Helv", sans-serif;
+    background-color:  #000080;
+    background-image:  url("background.gif");
+    background-position:  center center;
+    background-repeat:  no-repeat;
+    background-attachment:  fixed;
+    color:  #F5EED4;
+  }
+}
+
+H1, H2, H3, H4, H5, H6
+{
+  color:  white;
+}
+
+H1
+{
+  text-align:  center;
+  font-family:  cursive;
+  font-style:  italic;
+}
+
+HR
+{
+  color:  #FFA813;
+  background-color:  #FFA813;
+  height:  4px;
+}
+
+IMG
+{
+  margin:  0px;
+  border:  0px;
+  padding:  0px;
+}
+
+P.Signature
+{
+  font-family:  cursive;
+  font-style:  italic;
+}

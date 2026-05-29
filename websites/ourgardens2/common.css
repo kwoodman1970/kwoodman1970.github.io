@@ -1,0 +1,85 @@
+.Blink
+{
+  text-decoration:  blink;
+}
+
+.NoWrap
+{
+  white-space:  nowrap;
+}
+
+.Required
+{
+  color:  red;
+}
+
+.Underline
+{
+  text-decoration:  underline;
+}
+
+A:link
+{
+  color:  blue;
+}
+
+A:visited
+{
+  color:  fuchsia;
+}
+
+BODY
+{
+  color:  #005000;
+  background-color:  white;
+}
+
+@media screen
+{
+  BODY
+  {
+    font-family:  "Arial", "Helvetica", "Helv", sans-serif;
+  }
+}
+
+DIV#Main
+{
+  margin-left:  auto;
+  margin-right:  auto;
+  width:  50%;
+  min-width:  600px;
+}
+
+DIV#Equipment
+{
+  float:  right;
+  text-align:  right;
+}
+
+H1, H3
+{
+  text-align:  center;
+}
+
+IMG
+{
+  margin:  0px;
+  border:  0px;
+  padding:  0px;
+}
+
+IMG.Equipment
+{
+  display:  none;
+}
+
+LI
+{
+  color:  #00C000;
+  font-weight:  bold;
+}
+
+LI.Inert
+{
+  color:  #005000;
+}

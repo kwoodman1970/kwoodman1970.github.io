@@ -1,0 +1,17 @@
+@media screen
+{
+  BODY
+  {
+    font-family:  "Arial", "Helvetica";
+  }
+}
+TABLE.Border
+{
+  border-width:  4px;
+  border-color:  white;
+}
+
+TD, TH
+{
+  border-color:  white;
+}

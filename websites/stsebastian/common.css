@@ -1,0 +1,132 @@
+.Blink
+{
+  text-decoration:  blink;
+}
+
+.NoWrap
+{
+  white-space:  nowrap;
+}
+
+.Required
+{
+  color:  red;
+}
+
+.Underline
+{
+  text-decoration:  underline;
+}
+
+A:link
+{
+  color:  #66FFFF;
+}
+
+A:visited
+{
+  color:  #FF33FF;
+}
+
+A:hover
+{
+  color:  #FFFF00;
+}
+
+BODY
+{
+  color:  white;
+  background-color:  #990000;
+  background-image:  url("background.gif");
+  background-position:  center center;
+  background-repeat:  no-repeat;
+  background-attachment:  fixed;
+}
+
+@media screen
+{
+  BODY
+  {
+    font-family:  sans-serif;
+  }
+}
+
+DIV#Header
+{
+  text-align:  center;
+}
+
+H1
+{
+  font-family:  serif;
+  font-style:  italic;
+  font-weight:  normal;
+}
+
+H2
+{
+  text-align:  center;
+}
+
+HR
+{
+  color:  #FDD017;
+  background-color:  #FDD017;
+  height:  4px;
+}
+
+IMG
+{
+  margin:  0px;
+  border:  0px;
+  padding:  0px;
+}
+
+INPUT:focus
+{
+  background-color:lime;
+}
+
+H3 + P:first-letter, HR + P:first-letter, HR + IMG + P:first-letter
+{
+  font-size:  150%;
+  font-family:  serif;
+}
+
+SELECT:focus
+{
+  background-color:lime;
+}
+
+TABLE
+{
+  margin:  1px;
+  padding:  1px;
+  vertical-align:  top;
+}
+
+TABLE.Border
+{
+  border:  2px outset #8B99B7;
+  margin-bottom:  1em;
+  background-color:  white;
+}
+
+TD
+{
+  padding:  2px;
+  vertical-align:  top;
+  text-align:  left;
+}
+
+TH
+{
+  padding:  2px;
+  vertical-align:  top;
+  text-align:  center;
+}
+
+TABLE.Border > TBODY > TR > TD, TABLE.Border > TBODY > TR > TH
+{
+  border:  2px inset #8B99B7;
+}

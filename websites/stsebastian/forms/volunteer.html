@@ -1,0 +1,164 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<HTML>
+
+<HEAD>
+  <TITLE>St. Sebastian Elementary School -- Volunteer Application Form</TITLE>
+
+  <META HTTP-EQUIV="Content-Type"        CONTENT="text/html;charset=iso-8859-1">
+  <META HTTP-EQUIV="Content-Script-Type" CONTENT="text/javascript">
+
+  <LINK REL="shortcut icon" HREF="../favicon.ico">
+  <LINK REL="stylesheet"    HREF="../common.css" TYPE="text/css">
+
+  <!--[if lt IE 7]>
+    <LINK REL="stylesheet" HREF="../hacksIE.css" TYPE="text/css">
+  <![endif]-->
+
+  <SCRIPT TYPE="text/javascript" SRC="forms.js"></SCRIPT>
+  <SCRIPT TYPE="text/javascript">
+    <!--
+
+    function isFormValid(form)
+    {
+      var submit = true;
+
+      if (
+        (form.elements["Name"].value       == "") ||
+        (form.elements["MailFrom"].value   == "") ||
+        (form.elements["Address"].value    == "") ||
+        (form.elements["City"].value       == "") ||
+        (form.elements["PostalCode"].value == "") ||
+        (form.elements["HomePhone"].value  == ""))
+      {
+        window.alert("At least one required entry has not been filled in.  Please fill in " +
+          "the missing information.");
+        submit = false;
+      }
+
+      if (!form.elements["PlaygroundCommittee"].checked &&
+        !form.elements["LogoAndBannerCommittee"].checked &&
+        !form.elements["SchoolCouncil"].checked)
+      {
+        window.alert("You haven't selected any committees.");
+        submit=false;
+      }
+
+      /* Simulating form submission for demonstration purposes*/
+
+      if (submit)
+      {
+        window.alert("Form submission is simulated -- nothing is being sent to the school.");
+        window.open("formReceived.html", "_self");
+      }
+
+      return false;
+
+      /* End of simulation */
+
+      // return submit;
+    }
+
+    //-->
+  </SCRIPT>
+</HEAD>
+
+<BODY STYLE="background-image:none;">
+
+<H2>Volunteer Application Form</H2>
+
+<HR>
+
+<!--FORM STYLE="text-align:center;" METHOD=POST ACTION="formmail.php"-->
+<FORM STYLE="text-align:center;">
+  <INPUT TYPE=HIDDEN NAME="MailTo"       VALUE="craig.carpenter@cssd.ab.ca">
+  <INPUT TYPE=HIDDEN NAME="Subject"      VALUE="St. Sebastian volunteer application">
+  <INPUT TYPE=HIDDEN NAME="ResponsePage" VALUE="formReceived.html">
+  <INPUT TYPE=HIDDEN NAME="Order"        VALUE="Name,Address,City,Province,PostalCode,HomePhone,WorkPhone,PlaygroundCommittee,LogoAndBannerCommittee,SchoolCouncil">
+
+  <TABLE>
+    <TR>
+      <TD>Name:</TD>
+      <TD CLASS="Required">*</TD>
+      <TD><INPUT TYPE=TEXT NAME="Name" SIZE=40></TD>
+    </TR>
+    <TR>
+      <TD>E-mail address:</TD>
+      <TD CLASS="Required">*</TD>
+      <TD><INPUT TYPE=TEXT NAME="MailFrom" SIZE=40 ONCHANGE="return validateEmail(this);"></TD>
+    </TR>
+    <TR>
+      <TD>Mailing address:</TD>
+      <TD CLASS="Required">*</TD>
+      <TD><INPUT TYPE=TEXT NAME="Address" SIZE=40></TD>
+    </TR>
+    <TR>
+      <TD>Town or city:</TD>
+      <TD CLASS="Required">*</TD>
+      <TD><INPUT TYPE=TEXT NAME="City" SIZE=20 VALUE="Calgary"></TD>
+    </TR>
+    <TR>
+      <TD>Province:</TD>
+      <TD CLASS="Required">*</TD>
+      <TD>
+        <SELECT NAME="Province">
+          <OPTION SELECTED>AB</OPTION>
+          <OPTION>BC</OPTION>
+          <OPTION>MB</OPTION>
+          <OPTION>NB</OPTION>
+          <OPTION>NL</OPTION>
+          <OPTION>NS</OPTION>
+          <OPTION>NU</OPTION>
+          <OPTION>NWT</OPTION>
+          <OPTION>ON</OPTION>
+          <OPTION>PEI</OPTION>
+          <OPTION>QC</OPTION>
+          <OPTION>SK</OPTION>
+          <OPTION>YK</OPTION>
+        </SELECT>
+      </TD>
+    </TR>
+    <TR>
+      <TD>Postal code:</TD>
+      <TD CLASS="Required">*</TD>
+      <TD COLSPAN=2>
+        <INPUT TYPE=TEXT NAME="PostalCode" SIZE=7 ONCHANGE="return validatePostalCode(this);">
+      </TD>
+    </TR>
+    <TR>
+      <TD>Phone number (with area code):</TD>
+      <TD CLASS="Required">*</TD>
+      <TD><INPUT TYPE=TEXT NAME="HomePhone" SIZE=15 ONCHANGE="return validatePhone(this);"></TD>
+    </TR>
+    <TR>
+      <TD>Work phone number (with area code):</TD>
+      <TD></TD>
+      <TD><INPUT TYPE=TEXT NAME="WorkPhone" SIZE=15 ONCHANGE="return validatePhone(this)"></TD>
+    </TR>
+    <TR>
+      <TD>The committees you'd like to volunteer for:</TD>
+      <TD></TD>
+      <TD>
+        <INPUT TYPE=CHECKBOX NAME="PlaygroundCommittee" VALUE="Yes">Playground<BR>
+        <INPUT TYPE=CHECKBOX NAME="LogoAndBannerCommittee" VALUE="Yes">Logo
+        &amp; Banner<BR>
+        <INPUT TYPE=CHECKBOX NAME="SchoolCouncil" VALUE="Yes">School
+        Council<BR>
+      </TD>
+    </TR>
+  </TABLE>
+
+  <P>
+    <SPAN CLASS="Required">*</SPAN> Information is required for these entries.
+  </P>
+
+  <P>
+    <BUTTON TYPE=SUBMIT ONCLICK="return isFormValid(this.form)">Submit</BUTTON>
+    <BUTTON TYPE=RESET>Start Over</BUTTON>
+    <BUTTON TYPE=BUTTON ONCLICK="window.close()">Cancel</BUTTON>
+  </P>
+</FORM>
+
+</BODY>
+
+</HTML>
