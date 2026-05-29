@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Redirecting...</title>
+    <script>
+      <!--
+        /*
+        GitHub Pages doesn't support single-page applications.  This is a workaround.
+
+        The current path is stored in session storage and the browser is redirected to
+        index.html, which, in turn, checks session storage to see if a redirect has occurred
+        and invokes React Router to handle it.
+        */
+
+        sessionStorage.redirect = location.pathname + location.search + location.hash;
+        location.replace(location.origin);
+      //-->
+    </script>
+  </head>
+  <body>
+    <!-- This page is a workaround for GitHub Pages Single Page Application routing -->
+  </body>
+</html>
