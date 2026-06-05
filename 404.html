@@ -13,8 +13,6 @@
         and changes the browser history to allow React Router to handle it.
         */
 
-        const location = window.location;
-
         sessionStorage.redirect = location.pathname + location.search + location.hash;
         location.replace(location.origin);
       //-->
