@@ -16,16 +16,16 @@
         React Router to handle.
         */
 
-        let redirect = sessionStorage.redirect;
+        const redirect = sessionStorage.redirect;
+
+        if ((typeof redirect === "string") && (redirect !== window.location.pathname)) {
+          window.history.replaceState(null, "", redirect);
+        }
 
         delete sessionStorage.redirect;
-
-        if (redirect && redirect !== location.pathname) {
-          history.replaceState(null, null, redirect);
-        }
       //-->
     </script>
-    <script type="module" crossorigin src="/assets/index-88d6dfb3.js"></script>
+    <script type="module" crossorigin src="/assets/index-6a8e686a.js"></script>
     <link rel="stylesheet" href="/assets/index-aae48368.css">
   </head>
   <body>

@@ -10,8 +10,10 @@
 
         The current path is stored in session storage and the browser is redirected to
         index.html, which, in turn, checks session storage to see if a redirect has occurred
-        and invokes React Router to handle it.
+        and changes the browser history to allow React Router to handle it.
         */
+
+        const location = window.location;
 
         sessionStorage.redirect = location.pathname + location.search + location.hash;
         location.replace(location.origin);
