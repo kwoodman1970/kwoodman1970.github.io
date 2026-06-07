@@ -14,9 +14,11 @@
         */
 
         sessionStorage.redirect = location.pathname + location.search + location.hash;
+        // Preserve the page that linked to the missing URL (may be empty).
+        sessionStorage.originalReferrer = document.referrer;
         location.replace(location.origin);
 
-        console.log("Redirecting to index.html with path:  \"" + sessionStorage.redirect + "\"");
+        console.log("Redirecting to index.html with path:  \"" + sessionStorage.redirect + "\"; referrer: \"" + sessionStorage.originalReferrer + "\"");
       //-->
     </script>
   </head>
