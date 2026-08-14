@@ -5,34 +5,36 @@
     <link rel="icon" type="image/x-icon" href="/assets/favicon-504d9dcb.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kevin Woodman</title>
-    <script>
+    <script type="text/javascript">
       <!--
         /*
-        GitHub Pages doesn't support single-page applications.  This is a workaround.
+        In React single-page applications (SPA's), referrer context can be lost or rewritten
+        during 404 fallback redirects.  This script is the second part of a workaround for
+        GitHub Pages' 404 redirect behavior and continues from the script in "public/404.html".
 
-        A broken link is directed to public/404.html.  It will have saved that link in session
-        storage and redirected the browser to this file.  Therefore, if a link is found in
-        session storage then it's transferred to the browser's history so that it's ready for
-        React Router to handle.
+        If redirection information exists in "sessionStorage" then the originally requested
+        path & query is inserted into the browser history so that React Router will receive the
+        intended URL.  The original referrer URL is also added to the browser history state so
+        the application can retrieve the location of the broken link.
         */
 
-        const redirect = sessionStorage.redirect;
-        const originalReferrer = sessionStorage.originalReferrer;
+        const destinationURL = sessionStorage.destinationURL;
+        const referrerURL = sessionStorage.referrerURL;
 
-        if ((typeof redirect === "string") && (redirect !== window.location.pathname)) {
-          if (typeof originalReferrer === "string") {
-            // Expose the original referrer to the React app before we clear sessionStorage.
-            window.history.replaceState({ originalReferrer }, "", redirect);
+        if ((typeof destinationURL === "string") && (destinationURL !== window.location.pathname)) {
+          if (typeof referrerURL === "string") {
+            window.history.replaceState({ referrerURL }, "", destinationURL);
           }
 
-          console.log("Found 404 redirect in session storage:  \"" + redirect + "\"; original referrer: \"" + originalReferrer + "\"");
+          console.log("Found 404 redirect in session storage:  \"" + destinationURL
+            + "\"; original referrer: \"" + referrerURL + "\"");
         }
 
-        delete sessionStorage.redirect;
-        delete sessionStorage.originalReferrer;
+        delete sessionStorage.destinationURL;
+        delete sessionStorage.referrerURL;
       //-->
     </script>
-    <script type="module" crossorigin src="/assets/index-5245e505.js"></script>
+    <script type="module" crossorigin src="/assets/index-d9012765.js"></script>
     <link rel="stylesheet" href="/assets/index-aae48368.css">
   </head>
   <body>

@@ -3,22 +3,30 @@
   <head>
     <meta charset="utf-8">
     <title>Redirecting...</title>
-    <script>
+    <script type="text/javascript">
       <!--
         /*
-        GitHub Pages doesn't support single-page applications.  This is a workaround.
+        In React single-page applications (SPA's), referrer context can be lost or rewritten
+        during 404 fallback redirects.  This script is the first part of a workaround for
+        GitHub Pages' 404 redirect behavior.
 
-        The current path is stored in session storage and the browser is redirected to
-        index.html, which, in turn, checks session storage to see if a redirect has occurred
-        and changes the browser history to allow React Router to handle it.
+        When an HTTP request for a web page on GitHub Pages results in a 404 response code,
+        this file is served as the 404 page.  This script stores two values in
+        "sessionStorage":
+
+        1.  The originally requested path & query (that's the part of the request URL that comes
+            after the port).
+        2.  The original document referrer URL seen by this 404 page.
+
+        The browser is then redirected to the site's home page ("index.html") which will
+        insert that path & query into the browser history and pass the original referrer URL
+        into the SPA boot process.
         */
 
-        sessionStorage.redirect = location.pathname + location.search + location.hash;
-        // Preserve the page that linked to the missing URL (may be empty).
-        sessionStorage.originalReferrer = document.referrer;
-        location.replace(location.origin);
+        sessionStorage.destinationURL = location.pathname + location.search;
+        sessionStorage.referrerURL = document.referrer;
 
-        console.log("Redirecting to index.html with path:  \"" + sessionStorage.redirect + "\"; referrer: \"" + sessionStorage.originalReferrer + "\"");
+        location.replace(location.origin);
       //-->
     </script>
   </head>
